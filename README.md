@@ -1,5 +1,8 @@
 # password-generator
 
+[Link to Password Generator](https://tatyanayarush.github.io/password-generator/)
+
+
 # 03 JavaScript: Password Generator
 
 ## User Story
