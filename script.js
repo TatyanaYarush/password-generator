@@ -76,8 +76,17 @@ function generatePassword() {
 
         var characters = "";
         var password = "";
-        if (uppercaseCheck && numberCheck && specialCheck) {
-            characters += upperCaseCharacters + numbersCharacters + specialCharacters;
+        if (uppercaseCheck && numberCheck && specialCheck && lowercaseCheck) {
+            characters += upperCaseCharacters + numbersCharacters + specialCharacters + lowerCaseCharacters;
+
+        } else if (uppercaseCheck && lowercaseCheck && numberCheck) {
+            characters += upperCaseCharacters + lowerCaseCharacters + numbersCharacters;
+
+        } else if (uppercaseCheck && lowercaseCheck && specialCharacters) {
+            characters += upperCaseCharacters + lowerCaseCharacters + specialCharacters;
+
+        } else if (numberCheck && lowercaseCheck && specialCharacters) {
+            characters += numbersCharacters + lowerCaseCharacters + specialCharacters;
 
         } else if (uppercaseCheck && numberCheck) {
             characters += upperCaseCharacters + numbersCharacters;
@@ -85,8 +94,17 @@ function generatePassword() {
         } else if (numberCheck && specialCheck) {
             characters += numbersCharacters + specialCharacters;
 
+        } else if (numberCheck && lowercaseCheck) {
+            characters += numbersCharacters + lowerCaseCharacters;
+
+        } else if (specialCheck && lowercaseCheck) {
+            characters += specialCharacters + lowerCaseCharacters;
+
         } else if (uppercaseCheck && specialCheck) {
             characters += upperCaseCharacters + specialCharacters;
+
+        } else if (uppercaseCheck && lowercaseCheck) {
+            characters += upperCaseCharacters + lowerCaseCharacters;
 
         } else if (uppercaseCheck) {
             characters += upperCaseCharacters;
@@ -96,6 +114,9 @@ function generatePassword() {
 
         } else if (specialCheck) {
             characters += specialCharacters;
+
+        } else if (lowercaseCheck) {
+            characters += lowerCaseCharacters;
 
         } else {
 
